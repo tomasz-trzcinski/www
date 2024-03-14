@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script>
+router.get('/cb', function(req, res, next) {
+  console.log('get /cb', req.query);
+    if (req.query['hub.verify_token'] === 'moi') {
+      res.send(req.query['hub.challenge']);
+    }
+  }
+);
+</script>
+</head>
+<body>
+</body>
+</html>
